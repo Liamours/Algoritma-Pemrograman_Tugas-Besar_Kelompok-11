@@ -1,3 +1,13 @@
+/*
+	Source Code Tugas Besar Algoritma Pemrograman
+
+ 	Kelas IF-47-08
+ 	Kelompok 11
+  	Anggota: 
+   		1. M. Rifqi Dzaky Azhad [103012330009]
+     		2. Muhammad Arya Dwi Kesuma [103012300165]
+*/
+
 // Package dan Import
 
 package main
