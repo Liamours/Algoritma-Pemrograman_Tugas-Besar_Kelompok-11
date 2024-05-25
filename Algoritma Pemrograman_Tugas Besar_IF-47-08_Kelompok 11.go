@@ -1,13 +1,3 @@
-/*
-	Source Code Tugas Besar Algoritma Pemrograman
-
- 	Kelas IF-47-08
- 	Kelompok 11
-  	Anggota: 
-   		1. M. Rifqi Dzaky Azhad [103012330009]
-     		2. Muhammad Arya Dwi Kesuma [103012300165]
-*/
-
 // Package dan Import
 
 package main
@@ -103,6 +93,17 @@ var currentIndicator indikasiStunting = WHOIndicator
 
 var tipeSorting string = "Selection"
 
+// Fungsi menghilangkan print
+
+func clearLines(n int) {
+	for i := 0; i < n; i++ {
+		// Move the cursor up one line
+		fmt.Print("\033[A")
+		// Clear the line
+		fmt.Print("\033[K")
+	}
+}
+
 // Fungsi Center Teks [Untuk Tampilan Menu]
 
 const width int = 45
@@ -138,10 +139,13 @@ func menuExit() {
 	fmt.Scan(&in)
 	switch in {
 	case 1:
+		clearLines(100)
 		os.Exit(0)
 	case 2:
+		clearLines(100)
 		menuLoginRegister()
 	default:
+		clearLines(100)
 		menuExit()
 	}
 }
@@ -165,15 +169,19 @@ func menuLoginRegister() {
 
 	switch in {
 	case 1:
+		clearLines(100)
 		loginAkun()
 
 	case 2:
+		clearLines(100)
 		daftarAkun()
 
 	case 3:
+		clearLines(100)
 		menuExit()
 
 	default:
+		clearLines(100)
 		menuLoginRegister()
 
 	}
@@ -203,12 +211,15 @@ func daftarAkun() {
 
 		switch in {
 		case 1:
+			clearLines(100)
 			menuLoginRegister()
 
 		case 2:
+			clearLines(100)
 			menuExit()
 
 		default:
+			clearLines(100)
 			daftarAkun()
 
 		}
@@ -293,6 +304,7 @@ func isiStatus() {
 		dataUser.aUser[dataUser.n].status = "Admin"
 
 	default:
+		clearLines(100)
 		isiStatus()
 	}
 
@@ -320,9 +332,11 @@ func cekRegister() {
 	fmt.Scan(&inS)
 	switch inS {
 	case "Y":
+		clearLines(100)
 		dataUser.n++
 		menuLoginRegister()
 	case "T":
+		clearLines(100)
 		fmt.Println(border)
 		fmt.Println(centerText("Menu Ubah Data User", width))
 		fmt.Println(border)
@@ -338,18 +352,23 @@ func cekRegister() {
 		fmt.Scan(&in)
 		switch in {
 		case 1:
+			clearLines(100)
 			isiNama()
 
 		case 2:
+			clearLines(100)
 			isiUsername()
 
 		case 3:
+			clearLines(100)
 			isiPassword()
 
 		case 4:
+			clearLines(100)
 			isiStatus()
 
 		default:
+			clearLines(100)
 			cekRegister()
 
 		}
@@ -439,8 +458,10 @@ func loginAkun() {
 		fmt.Scan(&in)
 		switch in {
 		case "Y":
+			clearLines(100)
 			loginAkun()
 		case "T":
+			clearLines(100)
 			menuLoginRegister()
 		}
 	}
@@ -449,6 +470,7 @@ func loginAkun() {
 // Menu Admin [Mengubah Pengaturan - pengaturan]
 
 func menuUserAdmin() {
+	clearLines(100)
 	fmt.Println(border)
 	fmt.Println(centerText("Menu Perantara Admin", width))
 	fmt.Println(border)
@@ -463,12 +485,16 @@ func menuUserAdmin() {
 
 	switch in {
 	case 1:
+		clearLines(100)
 		menuData()
 	case 2:
+		clearLines(100)
 		menuAdmin()
 	case 3:
+		clearLines(100)
 		menuExit()
 	default:
+		clearLines(100)
 		menuUserAdmin()
 	}
 }
@@ -490,16 +516,22 @@ func menuAdmin() {
 	fmt.Scan(&in)
 	switch in {
 	case 1:
+		clearLines(100)
 		ubahSorting()
 	case 2:
+		clearLines(100)
 		ubahAkunUser()
 	case 3:
+		clearLines(100)
 		ubahIndikasiStunting()
 	case 4:
+		clearLines(100)
 		menuUserAdmin()
 	case 5:
+		clearLines(100)
 		menuExit()
 	default:
+		clearLines(100)
 		menuAdmin()
 	}
 }
@@ -519,14 +551,18 @@ func ubahSorting() {
 	fmt.Scan(&in)
 	switch in {
 	case 1:
+		clearLines(100)
 		tipeSorting = "Selection"
 		ubahSorting()
 	case 2:
+		clearLines(100)
 		tipeSorting = "Insertion"
 		ubahSorting()
 	case 3:
+		clearLines(100)
 		menuAdmin()
 	default:
+		clearLines(100)
 		ubahSorting()
 	}
 }
@@ -547,10 +583,13 @@ func ubahAkunUser() {
 	fmt.Scan(&in)
 	switch in {
 	case 1:
+		clearLines(100)
 		listUser()
 	case 2:
+		clearLines(100)
 		menuAdmin()
 	default:
+		clearLines(100)
 		ubahAkunUser()
 	}
 }
@@ -581,12 +620,16 @@ func listUser() {
 	fmt.Scan(&in)
 	switch in {
 	case 1:
+		clearLines(100)
 		adminUbahData()
 	case 2:
+		clearLines(100)
 		adminHilangData()
 	case 3:
+		clearLines(100)
 		menuAdmin()
 	default:
+		clearLines(100)
 		listUser()
 	}
 }
@@ -688,8 +731,10 @@ func adminUbahData() {
 		fmt.Scan(&in)
 		switch in {
 		case 1:
+			clearLines(100)
 			adminUbahData()
 		case 2:
+			clearLines(100)
 			listUser()
 		default:
 			adminUbahData()
@@ -720,8 +765,10 @@ func adminHilangData() {
 		fmt.Scan(&in2)
 		switch in2 {
 		case 1:
+			clearLines(100)
 			adminHilangData()
 		case 2:
+			clearLines(100)
 			listUser()
 		default:
 			adminHilangData()
@@ -736,12 +783,15 @@ func adminHilangData() {
 		fmt.Scan(&in3)
 		switch in3 {
 		case "Y":
+			clearLines(100)
 			geserKiriDataUser(idx)
 			fmt.Println("Data telah dihilangkan")
 			listUser()
 		case "T":
+			clearLines(100)
 			adminHilangData()
 		default:
+			clearLines(100)
 			adminHilangData()
 		}
 	}
@@ -798,8 +848,10 @@ func ubahIndikasiStunting() {
 		currentIndicator.nama = "Custom"
 
 	case 4:
+		clearLines(100)
 		menuAdmin()
 	default:
+		clearLines(100)
 		ubahIndikasiStunting()
 	}
 	ubahIndikasiStunting()
@@ -823,12 +875,16 @@ func menuData() {
 
 	switch in {
 	case 1:
+		clearLines(100)
 		menuLihatData()
 	case 2:
+		clearLines(100)
 		opsiDaftarDataBaru()
 	case 3:
+		clearLines(100)
 		menuExit()
 	default:
+		clearLines(100)
 		menuData()
 	}
 
@@ -862,12 +918,16 @@ func menuLihatData() {
 	fmt.Scan(&in)
 	switch in {
 	case 1:
+		clearLines(100)
 		cariDataMasyarakat()
 	case 2:
+		clearLines(100)
 		menuUrutDataMasyarakat()
 	case 3:
+		clearLines(100)
 		menuData()
 	case 4:
+		clearLines(100)
 		menuExit()
 	}
 }
@@ -907,12 +967,16 @@ func dataMainKetemu(i int) {
 	fmt.Scan(&in)
 	switch in {
 	case 1:
+		clearLines(100)
 		ulangSearchDataMain()
 	case 2:
+		clearLines(100)
 		menuData()
 	case 3:
+		clearLines(100)
 		opsiDaftarDataBaru()
 	default:
+		clearLines(100)
 		dataMainKetemu(i)
 	}
 }
@@ -925,10 +989,13 @@ func ulangSearchDataMain() {
 	fmt.Scan(&in)
 	switch in {
 	case "Y":
+		clearLines(100)
 		cariDataMasyarakat()
 	case "T":
+		clearLines(100)
 		menuLihatData()
 	default:
+		clearLines(100)
 		ulangSearchDataMain()
 	}
 }
@@ -984,8 +1051,10 @@ func menuUrutDataMasyarakat() {
 
 	switch in {
 	case 7:
+		clearLines(100)
 		menuLihatData()
 	case 8:
+		clearLines(100)
 		menuExit()
 	}
 
@@ -1349,10 +1418,13 @@ func duplikatNamaDataMasyatakat(idx int, nama string) {
 		fmt.Scan(&in)
 		switch in {
 		case "Y":
+			clearLines(100)
 			isiNamaData()
 		case "T":
+			clearLines(100)
 			menuData()
 		default:
+			clearLines(100)
 			duplikatNamaDataMasyatakat(idx, nama)
 		}
 	}
@@ -1374,10 +1446,13 @@ func umurTidakValid(umur int) {
 		fmt.Scan(&in)
 		switch in {
 		case "Y":
+			clearLines(100)
 			isiUmurData()
 		case "T":
+			clearLines(100)
 			menuData()
 		default:
+			clearLines(100)
 			umurTidakValid(umur)
 		}
 	}
@@ -1417,10 +1492,13 @@ func tinggiTidakValid(tinggi float64) {
 		fmt.Scan(&in)
 		switch in {
 		case "Y":
+			clearLines(100)
 			isiTinggiData()
 		case "T":
+			clearLines(100)
 			opsiDaftarDataBaru()
 		default:
+			clearLines(100)
 			tinggiTidakValid(tinggi)
 		}
 	}
@@ -1457,19 +1535,26 @@ func opsiUbahDataBaru() {
 	fmt.Scan(&in)
 	switch in {
 	case 1:
+		clearLines(100)
 		isiNamaData()
 	case 2:
+		clearLines(100)
 		isiAsalData()
 	case 3:
+		clearLines(100)
 		isiGenderData()
 	case 4:
+		clearLines(100)
 		isiTinggiData()
 	case 5:
+		clearLines(100)
 		dataMain.n++
 		menuData()
 	default:
+		clearLines(100)
 		opsiUbahDataBaru()
 	}
+	clearLines(100)
 	dataBaruPeubah()
 }
 
