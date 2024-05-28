@@ -601,10 +601,10 @@ func listUser() {
 	fmt.Println(border)
 	fmt.Println("Nama	Username	Password	Status")
 	for i < dataUser.n {
-		fmt.Printf(
-			dataUser.aUser[i].nama, "	",
-			dataUser.aUser[i].username, "	",
-			dataUser.aUser[i].password, "	",
+		fmt.Printf("%-10s %-10s %-10s %-10s\n",
+			dataUser.aUser[i].nama,
+			dataUser.aUser[i].username,
+			dataUser.aUser[i].password,
 			dataUser.aUser[i].status)
 		i++
 	}
